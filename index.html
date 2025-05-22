@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krusty Krab Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .login-screen, .desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .desktop {
+            display: none;
+            background-image: url('https://via.placeholder.com/1600x900/006400/ffffff?text=They+say+real+treasure+is+printed+on+the+green.');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .login-box {
+            background-color: #111;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .login-box input[type="password"] {
+            padding: 0.5em;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            margin-right: 1em;
+        }
+        .login-box button {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-screen">
+        <div class="login-box">
+            <input type="password" id="password" placeholder="Enter password">
+            <button onclick="checkPassword()">Login</button>
+            <div class="error" id="error"></div>
+        </div>
+    </div>
+
+    <div class="desktop" id="desktop">
+        <!-- Desktop UI will go here later -->
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const error = document.getElementById('error');
+            if (password === 'Pearl0315') {
+                document.querySelector('.login-screen').style.display = 'none';
+                document.getElementById('desktop').style.display = 'flex';
+            } else {
+                error.textContent = 'Incorrect password. Try again.';
+            }
+        }
+    </script>
+</body>
+</html>
